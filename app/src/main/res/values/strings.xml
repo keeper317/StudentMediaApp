@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Student Media App</string>
+    <string name="times">Cal Times</string>
+    <string name="tv">CUTV</string>
+    <string name="lab">Creative Services</string>
+
+    <!-- Radio -->
+    <string name="wcal">WCAL</string>
+    <string name="station">91.9 WCAL</string>
+
+    <!-- CUTV -->
+    <string name="gary">Gary Show</string>
+    <string name="text1">Text 1</string>
+    <string name="text2">Text 2</string>
+
+
+    <!-- YOUTUBE -->
+    <string name="player_error">Error initializing YouTube player: %s</string>
+    <string name="seek_to">Jump To</string>
+    <string name="seek_to_hint">Seconds</string>
+</resources>

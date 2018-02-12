@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/calRed"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        >
+
+        <!-- Menu -->
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+
+            app:srcCompat="@drawable/menu"
+            android:tint="@color/white"
+            android:background="@color/clear"
+            />
+        <!-- End -->
+        <!-- Back -->
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="48dp"
+            android:layout_height="30dp"
+            android:onClick="back"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+
+            app:srcCompat="@drawable/back"
+            android:tint="@color/white"
+            android:background="@color/clear"
+            />
+        <!-- End -->
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+
+            android:layout_toStartOf="@id/text"
+            android:layout_alignBottom="@id/text"
+            android:layout_marginEnd="8dp"
+
+            app:srcCompat="@drawable/radio"
+            android:tint="@color/calRed"
+            />
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_toStartOf="@id/menu"
+            android:layout_below="@id/menu"
+            android:layout_marginEnd="55dp"
+
+            android:textColor="@color/calRed"
+            android:textSize="25pt"
+            android:text="@string/wcal"
+            android:textStyle="bold"
+            />
+        <!-- End -->
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+
+            android:layout_centerInParent="true"
+
+            app:srcCompat="@drawable/wcal_logo"
+            />
+        <!-- End -->
+        <!-- Music Controls -->
+        <ImageView
+            android:id="@+id/queue"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginStart="10dp"
+
+            app:srcCompat="@drawable/queue"
+            android:tint="@color/white"
+            />
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:onClick="stationControl"
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+
+
+            app:srcCompat="@drawable/play"
+            android:tint="@color/white"
+            />
+        <ImageView
+            android:id="@+id/pause"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:onClick="stationControl"
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+
+            app:srcCompat="@drawable/pause"
+            android:tint="@color/white"
+            />
+        <ImageView
+            android:id="@+id/phone"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:onClick="dial"
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+
+            app:srcCompat="@drawable/phone"
+            android:tint="@color/white"
+            />
+        <!-- End-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/play"
+            android:layout_marginBottom="35dp"
+
+            android:textColor="@color/white"
+            android:textSize="10pt"
+            android:text="@string/station"
+            />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
