@@ -73,7 +73,17 @@
             android:text="@string/times"
             android:textStyle="bold"
             />
+        <!-- End -->
+        <!-- Issues -->
+        <ImageView
+            android:id="@+id/i1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
+            android:layout_below="@id/icon"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            />
     </RelativeLayout>
 
 </RelativeLayout>
