@@ -52,28 +52,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_alignEnd="@id/menu"
-            android:layout_below="@id/menu"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="22dp"
+            android:layout_alignEnd="@+id/menu"
+            android:layout_below="@+id/menu"
 
+            android:layout_marginEnd="11dp"
+            android:layout_marginTop="19dp"
+            android:text="@string/lab"
             android:textColor="@color/calRed"
             android:textSize="18pt"
-            android:text="@string/lab"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
+
         <ImageView
             android:id="@+id/icon"
             android:layout_width="60dp"
             android:layout_height="60dp"
 
-            android:layout_toStartOf="@id/text"
-            android:layout_alignBottom="@id/text"
-            android:layout_marginEnd="8dp"
-
-            app:srcCompat="@drawable/lightbulb"
+            android:layout_alignTop="@+id/text"
+            android:layout_toStartOf="@+id/text"
             android:tint="@color/calRed"
-            />
+            app:srcCompat="@drawable/lightbulb" />
         <!-- End -->
 
     </RelativeLayout>
