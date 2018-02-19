@@ -8,6 +8,7 @@ import android.view.View;
 
 public class Paper extends AppCompatActivity
 {
+	String[] paths = {"2-2-18.pdf"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -19,5 +20,12 @@ public class Paper extends AppCompatActivity
 	{
 		Intent intent = new Intent(this, Home.class);
 		startActivity(intent);
+	}
+
+	public void go(View v)
+	{
+		Intent i = new Intent(this, Viewer.class);
+		i.putExtra("Path", paths[0]);
+		startActivity(i);
 	}
 }
