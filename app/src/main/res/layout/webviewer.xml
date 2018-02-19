@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/calRed"
+    >
+    <RelativeLayout
+        android:layout_width="1440dp"
+        android:layout_height="2560dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:background="@color/black"
+        >
+
+        <!-- Menu -->
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+
+            app:srcCompat="@drawable/menu"
+            android:tint="@color/white"
+            android:background="@color/clear"
+            />
+        <!-- End -->
+        <!-- Back -->
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="48dp"
+            android:layout_height="30dp"
+            android:onClick="back"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+
+            app:srcCompat="@drawable/back"
+            android:tint="@color/white"
+            android:background="@color/clear"
+            />
+
+        <WebView
+            android:id="@+id/viewer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@+id/back"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+
+            />
+        <!-- End -->
+
+    </RelativeLayout>
+
+</RelativeLayout>
