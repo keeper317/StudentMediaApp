@@ -1,6 +1,7 @@
 
 package edu.calu.sai.studentmedia;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -33,17 +34,31 @@ public class Paper extends AppCompatActivity
 	{
 		DownloadFile("158.83.1.59/StudentMediaApp/Paper/2-2-18.pdf");
 
-		Uri path = Uri.fromFile(new File("file:///mnt/sdcard/Download/2-2-18.pdf"));
+		File file = new File("Download/2-2-18.pdf");
+		Intent target = new Intent(Intent.ACTION_VIEW);
+		target.setDataAndType(Uri.fromFile(file), "application/pdf");
+		target.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+
+
+
+		Intent intent = Intent.createChooser(target, "Open File");
+		try {
+			startActivity(intent);
+		} catch (ActivityNotFoundException e) {
+			// Instruct the user to install a PDF reader here, or something
+		}
+
+		/*Uri path = Uri.fromFile(new File("file:///mnt/sdcard/Download/2-2-18.pdf"));
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setDataAndType(path, "application/pdf");
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		startActivity(intent);
+		startActivity(intent);*/
 	}
 
 	public static void DownloadFile(String fileURL) {
 		try {
 
-			FileOutputStream f = new FileOutputStream(new File("/mnt/sdcard/Download/") );
+			FileOutputStream f = new FileOutputStream(new File("/Download/2-2-18.pdf") );
 			URL u = new URL(fileURL);
 			HttpURLConnection c = (HttpURLConnection) u.openConnection();
 			c.setRequestMethod("GET");
