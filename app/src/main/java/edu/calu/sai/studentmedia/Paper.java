@@ -11,8 +11,16 @@ import android.view.View;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
+
+import android.os.Environment;
+
+import android.widget.Toast;
 
 public class Paper extends AppCompatActivity
 {
@@ -30,52 +38,24 @@ public class Paper extends AppCompatActivity
 		startActivity(intent);
 	}
 
-	public void go(View v)
+	public void go (View v)
 	{
-		DownloadFile("158.83.1.59/StudentMediaApp/Paper/2-2-18.pdf");
+	    String fileUrl = "//158.83.1.59/StudentMediaApp/Paper/2-2-18.pdf";
+	    String fileName = "2-2-18.pdf";
 
-		File file = new File("Download/2-2-18.pdf");
-		Intent target = new Intent(Intent.ACTION_VIEW);
-		target.setDataAndType(Uri.fromFile(file), "application/pdf");
-		target.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        File file = new File("/root/sdcard", "/TESTTEST");
+        if (!file.mkdirs()) {
+            Toast.makeText(this, "NOT CREATED", Toast.LENGTH_SHORT).show();
+        }
+
+
+        //new DownloadFile().execute(fileUrl, fileName);
 
 
 
-		Intent intent = Intent.createChooser(target, "Open File");
-		try {
-			startActivity(intent);
-		} catch (ActivityNotFoundException e) {
-			// Instruct the user to install a PDF reader here, or something
-		}
+    }
 
-		/*Uri path = Uri.fromFile(new File("file:///mnt/sdcard/Download/2-2-18.pdf"));
-		Intent intent = new Intent(Intent.ACTION_VIEW);
-		intent.setDataAndType(path, "application/pdf");
-		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		startActivity(intent);*/
-	}
 
-	public static void DownloadFile(String fileURL) {
-		try {
 
-			FileOutputStream f = new FileOutputStream(new File("/Download/2-2-18.pdf") );
-			URL u = new URL(fileURL);
-			HttpURLConnection c = (HttpURLConnection) u.openConnection();
-			c.setRequestMethod("GET");
-			c.setDoOutput(true);
-			c.connect();
-
-			InputStream in = c.getInputStream();
-
-			byte[] buffer = new byte[1024];
-			int len1 = 0;
-			while ((len1 = in.read(buffer)) > 0) {
-				f.write(buffer, 0, len1);
-			}
-			f.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
 }
+//158.83.1.59/StudentMediaApp/Paper/2-2-18.pdf
