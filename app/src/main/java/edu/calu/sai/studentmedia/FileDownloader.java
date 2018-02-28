@@ -9,7 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class FileDownloader {
+class FileDownloader {
     private static final int  MEGABYTE = 1024 * 1024;
 
     public static void downloadFile(String fileUrl, File directory){
@@ -17,13 +17,10 @@ public class FileDownloader {
 
             URL url = new URL(fileUrl);
             HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-            urlConnection.setRequestMethod("GET");
-            urlConnection.setDoOutput(true);
             urlConnection.connect();
 
             InputStream inputStream = urlConnection.getInputStream();
             FileOutputStream fileOutputStream = new FileOutputStream(directory);
-            int totalSize = urlConnection.getContentLength();
 
             byte[] buffer = new byte[MEGABYTE];
             int bufferLength = 0;

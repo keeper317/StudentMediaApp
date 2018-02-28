@@ -28,20 +28,22 @@ public class DownloadFile extends AsyncTask<String, Void, Void>{
 
     @Override
     protected Void doInBackground(String... strings) {
-        String fileUrl = strings[0];   // -> http://maven.apache.org/maven-1.x/maven.pdf
-        String fileName = strings[1];  // -> maven.pdf
+        String fileUrl = strings[0];   // 158.83.1.59/StudentMediaApp/Paper/2-2-18.pdf
+        String fileName = strings[1];  // "2-2-18.pdf"
         String extStorageDirectory = Environment.getExternalStorageDirectory().toString();
-        File folder = new File("/home/TESTTESTTET", "/testthreepdf");
+
+        File folder = new File(extStorageDirectory, "StudentMediaApp/Paper");
         folder.mkdir();
 
-        File pdfFile = new File(folder, fileName);
+        File pdfFile = new File(folder.getAbsolutePath(), fileName);
+
 
         try{
             pdfFile.createNewFile();
         }catch (IOException e){
             e.printStackTrace();
         }
-        //FileDownloader.downloadFile(fileUrl, pdfFile);
+        FileDownloader.downloadFile(fileUrl, pdfFile);
         return null;
     }
 }
