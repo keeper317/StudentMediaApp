@@ -1,24 +1,8 @@
 package edu.calu.sai.studentmedia;
 
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-import java.io.FileNotFoundException;
-import java.net.MalformedURLException;
-
 import android.os.Environment;
-
 import android.os.AsyncTask;
 
 /**
