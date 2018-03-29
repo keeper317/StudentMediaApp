@@ -52,7 +52,7 @@ public class Paper extends AppCompatActivity
 		pdfIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		pdfIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 		
-        String spdf = pdfUri.toString();
+        String spdf = pdfFile.toString();
         System.out.println(spdf);
 
 		try{
