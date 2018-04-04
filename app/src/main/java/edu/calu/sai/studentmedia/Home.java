@@ -5,6 +5,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.app.ActivityCompat;
+import android.Manifest;
+import android.content.pm.PackageManager;
 
 
 public class Home extends AppCompatActivity
@@ -14,6 +18,16 @@ public class Home extends AppCompatActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home);
+
+		//check for the WRITE EXTERNAL PERMISSION
+		if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+				!= PackageManager.PERMISSION_GRANTED)
+		{
+			//ask for Write external permission
+			ActivityCompat.requestPermissions(this,
+					new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+					1);
+		}
 	}
 	public void menu(View v)
 	{
