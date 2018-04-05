@@ -2,20 +2,13 @@
 package edu.calu.sai.studentmedia;
 
 
-import android.Manifest;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v4.app.ActivityCompat;
-import android.os.Build;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
-import android.util.Log;
 
 import java.io.File;
 
@@ -55,7 +48,7 @@ public class Paper extends AppCompatActivity
             pdfUri = FileProvider.getUriForFile(this, AUTH + ".provider", pdfFile);
 
             Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
-            pdfIntent.setDataAndType(pdfUri, "StudentMediaApp/Paper");
+            pdfIntent.setDataAndType(pdfUri, "application/pdf");
             pdfIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             pdfIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
