@@ -2,6 +2,7 @@
 package edu.calu.sai.studentmedia;
 
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,8 +10,11 @@ import android.os.Environment;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import java.io.File;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class Paper extends AppCompatActivity
@@ -47,18 +51,37 @@ public class Paper extends AppCompatActivity
 
             pdfUri = FileProvider.getUriForFile(this, AUTH + ".provider", pdfFile);
 
-            Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
+            final Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
             pdfIntent.setDataAndType(pdfUri, "application/pdf");
             pdfIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             pdfIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
             System.out.println("Path : " + Environment.getExternalStorageDirectory());
-            //try {
-                startActivity(pdfIntent);
-            //} catch (ActivityNotFoundException e) //{
-                //Toast.makeText(getApplicationContext(),
-                        //"No Application available to view PDF ", Toast.LENGTH_SHORT).show();
-            //}
+
+		Timer timer = new Timer();
+
+		TimerTask delayedThreadStartTask = new TimerTask() {
+			@Override
+			public void run() {
+
+				//captureCDRProcess();
+				//moved to TimerTask
+				new Thread(new Runnable() {
+					@Override
+					public void run() {
+
+						try {
+							startActivity(pdfIntent);
+						} catch (ActivityNotFoundException e) {
+							Toast.makeText(getApplicationContext(),"No Application available to view PDF ",
+							               Toast.LENGTH_SHORT).show();
+						}
+					}
+				}).start();
+			}
+		};
+
+		timer.schedule(delayedThreadStartTask, 5 * 1000); //1 minute
 
 
 
