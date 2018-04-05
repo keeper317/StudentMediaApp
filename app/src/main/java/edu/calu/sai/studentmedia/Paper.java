@@ -41,13 +41,13 @@ public class Paper extends AppCompatActivity
 
 
 
-
-
+            File pdfFile = new File(Environment.getExternalStorageDirectory()
+		                                    + "/StudentMediaApp/Paper" + fileName);  // -> filename = 2-2-18.pdf
+			if(!pdfFile.exists())
             new DownloadFile().execute(fileUrl, fileName);
 
 
-            File pdfFile = new File(Environment.getExternalStorageDirectory()
-                    + "/StudentMediaApp/Paper" + fileName);  // -> filename = 2-2-18.pdf
+
 
             pdfUri = FileProvider.getUriForFile(this, AUTH + ".provider", pdfFile);
 
