@@ -28,8 +28,7 @@ public class Paper extends AppCompatActivity
 
 	public void back(View v)
 	{
-		Intent intent = new Intent(this, Home.class);
-		startActivity(intent);
+		finish();
 	}
 
 	public void go (View v)
@@ -42,13 +41,14 @@ public class Paper extends AppCompatActivity
 
 
             File pdfFile = new File(Environment.getExternalStorageDirectory()
-		                                    + "/StudentMediaApp/Paper" + fileName);  // -> filename = 2-2-18.pdf
+		                                    + "/StudentMediaApp/Paper" + fileName);//2-2-18.pdf
+			//check if pdf exists and download the pdf if it does not exist
 			if(!pdfFile.exists())
             new DownloadFile().execute(fileUrl, fileName);
 
 
 
-
+			//create a content URI from the file in order to share pdf between applications
             pdfUri = FileProvider.getUriForFile(this, AUTH + ".provider", pdfFile);
 
             final Intent pdfIntent = new Intent(Intent.ACTION_VIEW);

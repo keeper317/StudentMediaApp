@@ -43,6 +43,9 @@ public class Radio extends AppCompatActivity
 				audio.adjustStreamVolume(AudioManager.STREAM_MUSIC,
 				                         AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
 				return true;
+            case KeyEvent.KEYCODE_BACK:
+                finish();
+                return true;
 			default:
 				return false;
 		}
@@ -68,7 +71,7 @@ public class Radio extends AppCompatActivity
 					@Override
 					public void onPrepared(MediaPlayer mp)
 					{
-						Handler handler = new Handler();
+						/*Handler handler = new Handler();
 						handler.postDelayed(new Runnable()
 						{
 							@Override
@@ -92,8 +95,7 @@ public class Radio extends AppCompatActivity
 	}
 	public void back(View v)
 	{
-		Intent intent = new Intent(this, Home.class);
-		startActivity(intent);
+		finish();
 	}
 	public void dial(View v)
 	{

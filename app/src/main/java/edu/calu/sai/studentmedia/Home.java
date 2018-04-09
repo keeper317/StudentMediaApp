@@ -20,12 +20,13 @@ public class Home extends AppCompatActivity
 		setContentView(R.layout.home);
 
 		//check for the WRITE EXTERNAL PERMISSION
-		if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+		if (ContextCompat.checkSelfPermission(this,
+				Manifest.permission.WRITE_EXTERNAL_STORAGE)
 				!= PackageManager.PERMISSION_GRANTED)
 		{
-			//ask for Write external permission
+			//ask for WRITE_EXTERNAL_PERMISSION
 			ActivityCompat.requestPermissions(this,
-					new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
 					1);
 		}
 	}

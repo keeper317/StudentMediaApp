@@ -21,6 +21,7 @@ public class TV extends YouTubeBaseActivity
 	String list3 = "PLmaXXPYLkvULsZrnwjtJuJohelsM4BZ0Z";//cutv3
 	YouTubeThumbnailView view, view2, view3;
 	ImageButton back, menu;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -82,8 +83,7 @@ public class TV extends YouTubeBaseActivity
 
 	public void back(View v)
 	{
-		Intent intent = new Intent(this, Home.class);
-		startActivity(intent);
+		finish();
 	}
 
 	public void YT(View v)
