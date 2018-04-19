@@ -1,13 +1,11 @@
 package edu.calu.sai.studentmedia;
 
+import android.os.AsyncTask;
+import android.os.Environment;
+
 import java.io.File;
 import java.io.IOException;
-import android.os.Environment;
-import android.os.AsyncTask;
 
-/**
- * Created by administrator on 2/21/18.
- */
 public class DownloadFile extends AsyncTask<String, Void, Void>{
 
     @Override
@@ -20,7 +18,7 @@ public class DownloadFile extends AsyncTask<String, Void, Void>{
         folder.mkdir();
 
         File pdfFile = new File(folder.getAbsolutePath(), fileName);
-
+        publishProgress();
 
         try{
             pdfFile.createNewFile();
