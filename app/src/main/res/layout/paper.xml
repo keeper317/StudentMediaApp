@@ -88,33 +88,116 @@
                 android:textSize="25pt"
                 android:textStyle="bold"
                 />
+            <Space
+                android:id="@+id/centerLine"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible"/>
 
-            <ImageView
-                android:id="@+id/paperButton1"
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/text"
-                android:layout_centerInParent="false"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="10dp"
-                android:onClick="go"
-                android:src="@drawable/testimage"
-                android:scaleType="fitCenter"
+                android:layout_alignRight="@id/centerLine"
+                android:layout_marginRight="5dp">
 
-                />
 
-            <ImageButton
-                android:id="@+id/paperButton2"
-                android:layout_width="170dp"
-                android:layout_height="170dp"
 
-                android:layout_below="@id/paperButton1"
-                android:layout_centerInParent="true"
-                android:onClick="go"
-                android:src="@drawable/testimage"
-                android:scaleType="fitCenter"
-                />
+
+                <ImageButton
+                    android:id="@+id/paperButton1"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+
+                    android:onClick="go"
+                    android:src="@drawable/testimage"
+                    />
+                <ImageButton
+                    android:id="@+id/paperButton2"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/paperButton1"
+
+
+                    android:onClick="go"
+                    android:src="@drawable/testimage"
+                    />
+                <ImageButton
+                    android:id="@+id/paperButton3"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/paperButton2"
+
+
+                    android:onClick="go"
+                    android:src="@drawable/testimage"
+                    />
+                <ImageButton
+                    android:id="@+id/paperButton4"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/paperButton3"
+
+
+                    android:onClick="go"
+                    android:src="@drawable/testimage"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text"
+                android:layout_alignLeft="@id/centerLine"
+                android:layout_marginLeft="5dp">
+
+
+
+                <ImageButton
+                    android:id="@+id/paperButton5"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+
+                    android:onClick="go"
+                    android:src="@drawable/testimage"
+                    />
+                <ImageButton
+                    android:id="@+id/paperButton6"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/paperButton5"
+
+
+                    android:onClick="go"
+                    android:src="@drawable/testimage"
+                    />
+                <ImageButton
+                    android:id="@+id/paperButton7"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/paperButton6"
+
+
+                    android:onClick="go"
+                    android:src="@drawable/testimage"
+                    />
+                <ImageButton
+                    android:id="@+id/paperButton8"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/paperButton7"
+
+
+                    android:onClick="go"
+                    android:src="@drawable/testimage"
+                    />
+
+            </RelativeLayout>
+
+
+
+
 
 
         </RelativeLayout>
