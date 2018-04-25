@@ -14,77 +14,109 @@
         android:layout_marginTop="8dp"
         android:background="@color/black"
         >
+        <RelativeLayout
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- Menu -->
+            <ImageView
+                android:id="@+id/menu"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
 
-        <!-- Menu -->
-        <ImageView
-            android:id="@+id/menu"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp"
 
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="10dp"
+                android:background="@color/clear"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/menu"
+                />
+            <!-- End -->
+            <!-- Back -->
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="48dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
 
-            android:background="@color/clear"
-            android:tint="@color/white"
-            app:srcCompat="@drawable/menu"
-            />
-        <!-- End -->
-        <!-- Back -->
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="48dp"
-            android:layout_height="30dp"
-            android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/clear"
 
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/clear"
+                android:onClick="back"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/back"
+                />
+            <!-- End -->
+        </RelativeLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="510dp"
+            android:layout_below="@id/navigation">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="510dp"
+            >
 
-            android:onClick="back"
-            android:tint="@color/white"
-            app:srcCompat="@drawable/back"
-            />
-        <!-- End -->
-        <!-- Logo -->
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
 
-            android:layout_alignBottom="@id/text"
-            android:layout_marginEnd="8dp"
-            android:layout_toStartOf="@id/text"
+                android:layout_alignBottom="@id/text"
+                android:layout_marginEnd="8dp"
 
-            android:tint="@color/calRed"
-            app:srcCompat="@drawable/paper"
-            />
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                android:tint="@color/calRed"
+                android:src="@drawable/paper"
+                />
 
-            android:layout_below="@id/menu"
-            android:layout_marginEnd="15dp"
-            android:layout_toStartOf="@id/menu"
 
-            android:text="@string/times"
-            android:textColor="@color/calRed"
-            android:textSize="25pt"
-            android:textStyle="bold"
-            />
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        <ImageButton
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="123dp"
-            android:onClick="go"
-            android:src=""/>
+                android:layout_marginEnd="15dp"
+                android:layout_toRightOf="@id/icon"
+
+                android:text="@string/times"
+                android:textColor="@color/calRed"
+                android:textSize="25pt"
+                android:textStyle="bold"
+                />
+
+            <ImageView
+                android:id="@+id/paperButton1"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+
+                android:layout_below="@id/text"
+                android:layout_centerInParent="true"
+                android:onClick="go"
+                android:src="@drawable/testimage"
+                android:scaleType="fitCenter"
+
+                />
+
+            <ImageButton
+                android:id="@+id/paperButton2"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+
+                android:layout_below="@id/paperButton1"
+                android:layout_centerInParent="true"
+                android:onClick="go"
+                android:src="@drawable/testimage"
+                android:scaleType="fitCenter"
+                />
+
+
+        </RelativeLayout>
+        </ScrollView>
 
     </RelativeLayout>
 
