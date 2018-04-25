@@ -91,11 +91,13 @@
 
             <ImageView
                 android:id="@+id/paperButton1"
-                android:layout_width="350dp"
-                android:layout_height="350dp"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
 
                 android:layout_below="@id/text"
-                android:layout_centerInParent="true"
+                android:layout_centerInParent="false"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
                 android:onClick="go"
                 android:src="@drawable/testimage"
                 android:scaleType="fitCenter"
@@ -104,8 +106,8 @@
 
             <ImageButton
                 android:id="@+id/paperButton2"
-                android:layout_width="350dp"
-                android:layout_height="350dp"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
 
                 android:layout_below="@id/paperButton1"
                 android:layout_centerInParent="true"
